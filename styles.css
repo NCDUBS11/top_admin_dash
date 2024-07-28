@@ -24,12 +24,11 @@
     display: grid;
     text-transform: uppercase;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1.5fr 6fr;
     grid-template-areas: 
         "nav header"
         "nav content";
     background-color: var(--main-bg-color);
-    background-o
 }
 
 header{
@@ -42,16 +41,62 @@ header{
         "searchBar userSmall"
         "userLarge actions";
     align-items: center;
-    border-right: 2px solid var(--main-border-color);
+    border-bottom: 2px solid;
 }
 
 #searchBar{
     grid-area: searchBar;
+    position:relative;
+}
+
+#searchBar .icon{
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.5rem;
+}
+
+#searchBar input{
+    border: 2px solid;
+    border-radius: 20px;
+    width: 80%;
+    background-color: rgb(202, 202, 202);
+    height: 1.75rem;
+    padding: 0.25rem;
+    padding-left: 2rem;
 }
 
 #user.small{
     grid-area: userSmall;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "userImage username";
+    align-items: center;
+    justify-items: center;
 }
+
+#user.small>.userImage{
+    grid-area: userImage;
+    border: 2px solid black;
+    border-radius: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url(./star.jpg);
+    background-size: 4rem;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+#user.small>.username{
+    grid-area: username;
+    font-weight: 600;
+    justify-self: start;
+}
+
 #user.large{
     grid-area: userLarge;
 }
@@ -63,12 +108,13 @@ nav{
     grid-area: nav;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr 5fr;
+    grid-template-rows: 1.25fr 5fr 5fr;
     grid-template-areas: 
         "logoArea"
         "siteNav"
         "siteSet";
     align-items: center;
+    border-right: 2px solid;
 }
 
 .logoArea{
