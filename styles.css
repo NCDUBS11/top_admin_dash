@@ -16,7 +16,15 @@
     --main-font-color: black;
     --main-bg-color: rgb(255, 253, 251);
     --main-boarder-color: rgb(82, 81, 81);
-    --second-bg-color:  rgb(82, 81, 81);
+    --second-bg-color:  rgb(202, 202, 202);
+}
+
+button{
+    background-color: var(--second-bg-color);
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 0.3rem 1.5rem;
+    cursor: pointer;
 }
 
 .container{
@@ -24,7 +32,7 @@
     display: grid;
     text-transform: uppercase;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1.5fr 6fr;
+    grid-template-rows: 1fr 6fr;
     grid-template-areas: 
         "nav header"
         "nav content";
@@ -32,10 +40,10 @@
 }
 
 header{
-    padding: 1rem;
+    padding: 1rem 2rem;
     grid-area: header;
     display: grid;
-    grid-template-columns: 6fr 2fr;
+    grid-template-columns: 4fr 2fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
         "searchBar userSmall"
@@ -61,7 +69,7 @@ header{
     border: 2px solid;
     border-radius: 20px;
     width: 80%;
-    background-color: rgb(202, 202, 202);
+    background-color: var(--second-bg-color);
     height: 1.75rem;
     padding: 0.25rem;
     padding-left: 2rem;
@@ -71,10 +79,13 @@ header{
     grid-area: userSmall;
     display: grid;
     height: 100%;
-    grid-template-columns: 1fr 2fr;
+    min-width: 150px;
+    max-width: 30ch;
+    grid-template-columns: 4rem 2fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "userImage username";
+    justify-self: end;
     align-items: center;
     justify-items: center;
 }
@@ -99,9 +110,59 @@ header{
 
 #user.large{
     grid-area: userLarge;
+    display: grid;
+    height: 100%;
+    min-width: 200px;
+    grid-template-columns: 6rem 2fr;
+    grid-template-rows: 1.5fr 2fr;
+    grid-template-areas: 
+        "userImage greeting"
+        "userImage username";
+    align-items: center;
+    justify-items: center;
 }
+
+#user.large>.userImage{
+    grid-area: userImage;
+    border: 2px solid black;
+    border-radius: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(./star.jpg);
+    background-size: 6rem;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+#user.large>.greeting{
+    grid-area: greeting;
+    justify-self: start;
+    align-self: end;
+    font-size: 0.8rem;
+
+}
+
+#user.large>.username{
+    grid-area: username;
+    font-weight: 600;
+    justify-self: start;
+    font-size: 1.5rem;
+}
+
 #actions{
     grid-area: actions;
+    list-style: none;
+    align-items: center;
+    justify-items: center;
+    justify-self: end;
+}
+
+#actions>li{
+    display: grid;
+    grid-template-columns: repeat(3, 8rem);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
 }
 
 nav{
