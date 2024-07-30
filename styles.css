@@ -167,6 +167,7 @@ header{
 
 nav{
     grid-area: nav;
+    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.25fr 5fr 5fr;
@@ -175,15 +176,52 @@ nav{
         "siteNav"
         "siteSet";
     align-items: center;
+    justify-items: left;
     border-right: 2px solid;
 }
 
 .logoArea{
     grid-area: logoArea;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: 1.5rem;
+    grid-template-areas: 
+        "logo logoText";
+    gap: 0.25rem;
+    align-items: center;
+    justify-items: left;
 }
 
-#siteNav{
+.logoArea>.logo{
+    grid-area: logo;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(./atom-variant.svg);
+    background-size: 3rem;
+    background-position: center;
+    background-repeat:no-repeat;
+    animation: spin 7s linear infinite;
+}
+
+.logoArea>.logoText{
+    grid-area: logoText;
+    letter-spacing: 0.3ch;
+
+}
+
+.siteNav{
     grid-area: siteNav;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+    justify-items: left;
+    row-gap: 1.2rem;
+}
+
+.siteNav>.logo{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
 }
 
 #siteSet{
@@ -198,11 +236,11 @@ nav{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr 1fr 0.25fr 1fr 1fr;
     grid-template-areas: 
-        "c1 c1 c2 c3"
-        "c1 c1 c2 c3"   
-        "c4 c5 c2 c3"
-        "c4 c5 c6 c6"
-        "c4 c5 c6 c6";
+        "c1 c1 c2 c2"
+        "c1 c1 c2 c2"   
+        "c3 c3 c2 c2"
+        "c3 c3 c4 c4"
+        "c3 c3 c4 c4";
     align-items: center;
     justify-items: center;
 }
@@ -236,6 +274,15 @@ nav{
 
 #content>.c6{
     grid-area: c6;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 
