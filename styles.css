@@ -31,7 +31,7 @@ button{
     height: 100vh;
     display: grid;
     text-transform: uppercase;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 250px 4fr;
     grid-template-rows: 1fr 6fr;
     grid-template-areas: 
         "nav header"
@@ -170,7 +170,7 @@ nav{
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.25fr 2fr 2fr;
+    grid-template-rows: minmax(100px, 150px) minmax(300px, 500px) minmax(300px, 500px);
     grid-template-areas: 
         "logoArea"
         "siteNav"
@@ -211,6 +211,7 @@ nav{
 
 .siteNav{
     grid-area: siteNav;
+    padding-left: 0.5rem;
     display: grid;
     grid-template-columns: 0.5fr 2fr;
     align-items: center;
@@ -218,14 +219,22 @@ nav{
     row-gap: 1.2rem;
 }
 
-.siteNav>.logo{
+.icon{
     width: 2rem;
     height: 2rem;
     margin-right: 0.5rem;
 }
 
-#siteSet{
+.siteSet{
     grid-area: siteSet;
+    margin-top:1.25rem;
+    align-self: start;
+    padding-left: 0.5rem;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+    justify-items: left;
+    row-gap: 1.2rem;
 }
 
 #content{
