@@ -170,7 +170,7 @@ nav{
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.25fr 5fr 5fr;
+    grid-template-rows: 1.25fr 2fr 2fr;
     grid-template-areas: 
         "logoArea"
         "siteNav"
