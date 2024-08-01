@@ -37,6 +37,7 @@ button{
         "nav header"
         "nav content";
     background-color: var(--main-bg-color);
+    overflow: hidden;
 }
 
 header{
@@ -239,51 +240,45 @@ nav{
 
 #content{
     grid-area: content;
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 5rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 1fr 1fr 0.25fr 1fr 1fr;
-    grid-template-areas: 
-        "c1 c1 c2 c2"
-        "c1 c1 c2 c2"   
-        "c3 c3 c2 c2"
-        "c3 c3 c4 c4"
-        "c3 c3 c4 c4";
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
     align-items: center;
     justify-items: center;
+    overflow-y: scroll;
+    position:relative
 }
 
-#content>*{
+#content>.projBox{
     border-radius: 1rem;
     border: 2px solid black;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1/1.5;
+
 }
 
-#content>.c1{
-    grid-area: c1;
+#content>.title{
+    position: absolute;
+    font-size: 2rem;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#content>.c2{
-    grid-area: c2;
-}
 
-#content>.c3{
-    grid-area: c3;
-}
 
-#content>.c4{
-    grid-area: c4;
-}
 
-#content>.c5{
-    grid-area: c5;
-}
 
-#content>.c6{
-    grid-area: c6;
-}
+
+
+
+
+
+
+
 
 @keyframes spin {
     from{
